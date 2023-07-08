@@ -1,4 +1,4 @@
-import effective_java.builder_pattern.Product;
+import effective_java.builder_pattern.ProductBuilder;
 import effective_java.concurrency.MathUtils;
 import effective_java.concurrency.Thread1;
 import effective_java.concurrency.Thread2;
@@ -6,6 +6,7 @@ import effective_java.enumeration.UserType;
 import effective_java.factory_method.Shape;
 import effective_java.factory_method.ShapeFactory;
 import effective_java.factory_method.ShapeType;
+import effective_java.singleton.Singlton;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,7 +14,7 @@ public class Main {
          * This the example of Builder pattern ( Creational design pattern )
          * */
         System.out.println("------------------Builder pattern-----------------");
-        Product product = new Product.Builder()
+        ProductBuilder product = new ProductBuilder.Builder()
                 .setId(1)
                 .setName("Mango")
                 .setPrice(100)
@@ -43,6 +44,13 @@ public class Main {
         System.out.println(UserType.SALES_SUPERVISOR.getDescription());
         System.out.println(UserType.SALES_MANAGER.getDescription());
         System.out.println();
+
+        /*
+         * This example elaborate singleton class
+         * */
+        System.out.println("-------------Singleton---------------");
+        Singlton singlton = Singlton.getInstance();
+        singlton.showMessage();
 
         /*
          * This is the example for concurrency/multithreading

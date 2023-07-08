@@ -1,13 +1,13 @@
 package effective_java.builder_pattern;
 
 
-public class Product {
+public class ProductBuilder {
     int id;
     String name;
     double price;
     String description;
 
-    public Product(Builder builder) {
+    public ProductBuilder(Builder builder) {
         this.id = builder.id;
         this.name = builder.name;
         this.price = builder.price;
@@ -37,11 +37,11 @@ public class Product {
 
         public Builder setDescription(String description) {
             this.description = description;
-            return  this;
+            return this;
         }
 
-        public Product build () {
-            return new Product(this);
+        public ProductBuilder build() {
+            return new ProductBuilder(this);
         }
     }
 
@@ -63,12 +63,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                ", description='" + description + '\'' +
-                '}';
+        return "Product{" + "id=" + id + ", name='" + name + '\'' + ", price=" + price + ", description='" + description + '\'' + '}';
     }
 
 
